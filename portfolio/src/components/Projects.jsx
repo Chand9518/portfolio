@@ -61,7 +61,7 @@ Redtag
 </p>
 <p className="text-gray-400 mt-3">
  Deprecated legacy packages (e.g., Apache Cocoon) and implemented compliant alternatives to ensure AEM Cloud Service compatibility
-</p className="text-gray-400 mt-3">
+</p>
 <p>
   Developed new AEM components and enhanced legacy components to support evolving UI/UX requirements.
 </p>

@@ -15,7 +15,7 @@ Experience
 Software Developer — Tru IT
 </h3>
 <p className="text-gray-400">
-GraphQL integrations • Algolia search • Unit Testing
+May/2025  -  Present
 </p>
 </div>
 
@@ -24,7 +24,7 @@ GraphQL integrations • Algolia search • Unit Testing
 AEM Developer — Deftsoft
 </h3>
 <p className="text-gray-400">
-Headless CMS • SSO integration • AEM Cloud migration
+Nov/2024 - Dec/2025
 </p>
 </div>
 
@@ -33,7 +33,7 @@ Headless CMS • SSO integration • AEM Cloud migration
 Associate Technology — TechChefz
 </h3>
 <p className="text-gray-400">
-Sling Models • JCR Services • React + AEM integration
+May/2022  -  May/2023
 </p>
 </div>
 

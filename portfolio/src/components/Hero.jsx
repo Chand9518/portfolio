@@ -8,18 +8,7 @@ return(
 <section className="h-screen flex items-center">
 
 <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-<motion.div
-initial={{opacity:0,x:100}}
-animate={{opacity:1,x:0}}
-transition={{duration:1}}
->
 
-<img
-src={profile}
-className="w-80 rounded-full shadow-2xl mx-auto"
-/>
-
-</motion.div>
 
 <motion.div
 initial={{opacity:0,x:-100}}
@@ -44,15 +33,20 @@ I build scalable digital experiences using Adobe Experience Manager, Java, OSGi,
 
 </p>
 
-<button className="mt-6 px-6 py-3 bg-cyan-500 rounded-lg hover:scale-105 transition">
-
-Hire Me
-
-</button>
-
 </motion.div>
 
+<motion.div
+initial={{opacity:0,x:100}}
+animate={{opacity:1,x:0}}
+transition={{duration:1}}
+>
 
+<img
+src={profile}
+className="w-80 rounded-full shadow-2xl mx-auto"
+/>
+
+</motion.div>
 
 </div>
 

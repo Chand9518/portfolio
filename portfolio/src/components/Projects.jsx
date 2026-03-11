@@ -1,76 +1,97 @@
-export default function Projects(){
+import { useState } from "react";
+import "../assets/css/projects.css";
 
-return(
+export default function Projects() {
 
-<section id="projects" className="py-32 bg-slate-950">
+  const [flipped, setFlipped] = useState(null);
 
-<h2 className="text-3xl text-center font-bold text-cyan-400 mb-16">
-Projects
-</h2>
+  const projects = [
+    {
+      title: "DXP - Sobeys",
+      desc: [
+        "Integrated GraphQL APIs for seamless data retrieval.",
+        "Implemented Algolia Search integration.",
+        "Developed unit tests for reliability."
+      ],
+      link: "https://www.sobeys.com/"
+    },
+    {
+      title: "Hitachi Vantara - COE",
+      desc: [
+        "Migrated AEM 6.5 to AEM Cloud Service.",
+        "Integrated SSO authentication.",
+        "Developed AEM components, models, and services."
+      ],
+      link: "https://coe.hitachivantara.com/"
+    },
+    {
+      title: "Redtag",
+      desc: [
+        "Developed AEM backend APIs using Solr & JCR.",
+        "Built GraphQL APIs using Content Fragments.",
+        "Enhanced legacy components and AEM Cloud compatibility."
+      ],
+      link: "https://www.redtag.ca/"
+    }
+  ];
 
-<div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+  return (
 
-<div className="bg-white/5 p-6 rounded-xl hover:scale-105 transition">
+    <section id="projects" className="py-32 bg-slate-950">
 
-<h3 className="text-xl font-semibold">
-DXP - Sobeys
-</h3>
+      <h2 className="text-3xl text-center font-bold text-cyan-400 mb-16">
+        Projects
+      </h2>
 
-<p className="text-gray-400 mt-3">
- Integrated multiple third-party APIs using GraphQL to enable seamless data retrieval and improved application performance.
-</p>
-<p className="text-gray-400 mt-3">
- Implemented Algolia Search integration to deliver fast, relevant, and scalable search experiences across the application.
-</p>
-<p className="text-gray-400 mt-3">
- Developed and executed comprehensive Unit Test cases to ensure code quality, reliability, and regression-free deployments.
-</p>
+      <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
 
-</div>
+        {projects.map((project, index) => (
 
-<div className="bg-white/5 p-6 rounded-xl hover:scale-105 transition">
+          <div
+            key={index}
+            className="flip-card cursor-pointer"
+            onClick={() =>
+              setFlipped(flipped === index ? null : index)
+            }
+          >
 
-<h3 className="text-xl font-semibold">
-Hitachi Vantara - COE
-</h3>
+            <div className={`flip-inner ${flipped === index ? "flipped" : ""}`}>
 
-<p className="text-gray-400 mt-3">
- Led the successful migration of AEM 6.5 to AEM as a Cloud Service, ensuring seamless transition and system integrity
-</p>
-<p className="text-gray-400 mt-3">
- Integrated Single Sign-On (SSO) authentication with AEM as a Cloud Service, enhancing security and user experience. 
-</p>
-<p className="text-gray-400 mt-3">
- Engineered and maintained AEM custom components, functionalities, including models, servlets, services, and configurations for dynamic content 
-management.
-</p>
+              <div className="flip-front flex items-center justify-center">
 
-</div>
+                <h3 className="text-xl font-semibold text-cyan-300 text-center">
+                  {project.title}
+                </h3>
 
-<div className="bg-white/5 p-6 rounded-xl hover:scale-105 transition">
+              </div>
 
-<h3 className="text-xl font-semibold">
-Redtag
-</h3>
+              <div className="flip-back flex flex-col justify-between">
 
-<p className="text-gray-400 mt-3">
- Developed scalable AEM backend APIs for the RedTag mobile app, delivering travel deals (flights, vacations, hotels, cars) via Solr and JCR.
-</p>
-<p className="text-gray-400 mt-3">
-  Built headless GraphQL APIs using AEM Content Fragments for seamless content delivery.
-</p>
-<p className="text-gray-400 mt-3">
- Deprecated legacy packages (e.g., Apache Cocoon) and implemented compliant alternatives to ensure AEM Cloud Service compatibility
-</p>
-<p className="text-gray-400 mt-3">
-  Developed new AEM components and enhanced legacy components to support evolving UI/UX requirements.
-</p>
-</div>
+                <ul className="list-disc pl-5 text-gray-400 text-sm space-y-2 mt-3">
+                  {project.desc.map((text, i) => (
+                    <li key={i}>{text}</li>
+                  ))}
+                </ul>
 
-</div>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-block text-center bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 rounded-lg transition"
+                >
+                  Visit Website
+                </a>
 
-</section>
+              </div>
 
-)
+            </div>
 
+          </div>
+
+        ))}
+
+      </div>
+
+    </section>
+  );
 }
